@@ -5,8 +5,8 @@
 
 @interface alipay : CDVPlugin {
     // Member variables go here.
-    NSString *app_id;
-    NSString *currentCallbackId;
+    @property(nonatomic,strong)NSString *app_id;
+    @property(nonatomic,strong)NSString *currentCallbackId;
 }
 
 - (void)payment:(CDVInvokedUrlCommand*)command;
