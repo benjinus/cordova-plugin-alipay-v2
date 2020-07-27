@@ -46,14 +46,10 @@
     {
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
             
-            CDVPluginResult* pluginResult;
-            
-            if ([[resultDic objectForKey:@"resultStatus"] isEqual: @"9000"]) {
-                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:resultDic];
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+           if ([[resultDic objectForKey:@"resultStatus"]  isEqual: @"9000"]) {
+                [self successWithCallbackID:self.currentCallbackId messageAsDictionary:resultDic];
             } else {
-                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:resultDic];
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
+                [self failWithCallbackID:self.currentCallbackId messageAsDictionary:resultDic];
             }
         }];
     }
