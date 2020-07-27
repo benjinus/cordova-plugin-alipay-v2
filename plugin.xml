@@ -39,7 +39,7 @@
                     <string>alipay</string>
                     <key>CFBundleURLSchemes</key>
                     <array>
-                        <string>ali$APP_ID</string>
+                        <string>a$APP_ID</string>
                     </array>
                 </dict>
             </array>
