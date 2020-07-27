@@ -24,7 +24,7 @@
 {
     self.currentCallbackId = command.callbackId;
     NSString* orderString = [command.arguments objectAtIndex:0];
-    NSString* appScheme = [NSString stringWithFormat:@"ali%@", self.app_id];
+    NSString* appScheme = [NSString stringWithFormat:@"a%@", self.app_id];
     
     if (orderString != nil) {
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
