@@ -3,11 +3,9 @@
 #import <Cordova/CDV.h>
 #import <AlipaySDK/AlipaySDK.h>
 
-@interface alipay : CDVPlugin {
-    // Member variables go here.
-    @property(nonatomic,strong)NSString *app_id;
-    @property(nonatomic,strong)NSString *currentCallbackId;
-}
+@interface alipay : CDVPlugin
+@property(nonatomic,strong)NSString *app_id;
+@property(nonatomic,strong)NSString *currentCallbackId;
 
 - (void)payment:(CDVInvokedUrlCommand*)command;
 @end
